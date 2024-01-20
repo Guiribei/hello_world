@@ -6,20 +6,23 @@
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 00:43:27 by guribeir          #+#    #+#             */
-/*   Updated: 2024/01/20 18:02:34 by guribeir         ###   ########.fr       */
+/*   Updated: 2024/01/20 19:42:17 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "hello.h"
 
-int	main(void)
+int	main(int argc, char **argv)
 {
 	char	*str;
 	int		i;
 	t_node	*head;
 
 	head = NULL;
-	str = create_string("Hello world!\n");
+	if (argc == 1)
+		str = "Hello world!\n";
+	else
+		str = create_string(argc, argv);
 	if (!str)
 		return (1);
 	i = 0;
@@ -29,7 +32,8 @@ int	main(void)
 		i++;
 	}
 	print_string_on_node(head);
-	free(str);
+	if (str && argc > 1)
+		free(str);
 	free_list(head);
 	return (0);
 }
