@@ -1,7 +1,7 @@
 NAME=hello
 CC=gcc
-CFLAGS=-Wall -Wextra -Werror
-SRC= add_node_to_list.c create_node.c create_string.c create_string.c hello.c free_list.c print_string_on_node.c
+CFLAGS=-Wall -Wextra -Werror -g3
+SRC= add_node_to_list.c create_node.c create_string.c create_string.c get_total_size.c hello.c free_list.c print_string_on_node.c
 OBJ=$(SRC:.c=.o)
 
 # ANSI escape codes for colors
