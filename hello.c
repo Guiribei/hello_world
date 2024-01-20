@@ -6,7 +6,7 @@
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 00:43:27 by guribeir          #+#    #+#             */
-/*   Updated: 2024/01/20 00:45:05 by guribeir         ###   ########.fr       */
+/*   Updated: 2024/01/20 03:18:06 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,20 @@ int	main(void)
 {
 	char	*str;
 	int		i;
+	t_node	*head;
 
+	head = NULL;
 	str = create_string("Hello world!\n");
 	if (!str)
 		return (1);
 	i = 0;
 	while (str[i])
 	{
-		write(1, &str[i], 1);
+		add_node_to_list(&head, create_node(str[i]));
 		i++;
 	}
+	print_string_on_node(head);
 	free(str);
+	free_list(head);
 	return (0);
 }
