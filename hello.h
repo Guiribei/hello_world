@@ -6,7 +6,7 @@
 /*   By: guribeir <guribeir@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 00:45:48 by guribeir          #+#    #+#             */
-/*   Updated: 2024/01/20 18:02:36 by guribeir         ###   ########.fr       */
+/*   Updated: 2024/01/20 19:47:07 by guribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,10 @@ typedef struct s_node
 }	t_node;
 
 void	add_node_to_list(t_node **head, t_node *new_node);
-char	*create_string(const char *input);
+char	*create_string(int argc, char **argv);
 t_node	*create_node(char c);
 void	free_list(t_node *head);
+int		get_total_size(int argc, char **argv);
 void	print_string_on_node(t_node *node);
 
 #endif
